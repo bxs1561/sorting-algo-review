@@ -3,6 +3,7 @@ import java.util.Arrays;
 //Best Case Time Complexity: O(n). Best case occurs when array is already sorted
 public class BubbleSort {
     public static void bubbleSort(int[]arr){
+        System.out.println("unsorted arrays: "+" "+Arrays.toString(arr));
         //flag to optimized sort algorithm
         boolean flag;
         //iterate through number of pass
@@ -22,7 +23,7 @@ public class BubbleSort {
                 break;
             }
         }
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Bubble Sorted arrays: "+" "+Arrays.toString(arr));
 
     }
 
