@@ -3,8 +3,11 @@ import java.util.Arrays;
 //Best Case Time Complexity: O(n). Best case occurs when array is already sorted
 public class BubbleSort {
     public static void bubbleSort(int[]arr){
+        //flag to optimized sort algorithm
+        boolean flag;
         //iterate through number of pass
         for(int i=0;i<arr.length-1;i++){
+            flag = false;
             //iterate through number of comparision
             for(int j=0;j<arr.length-1-i;j++){
                 //check if previous element is greater than next element in array and swap
@@ -12,7 +15,11 @@ public class BubbleSort {
                     int temp=arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
+                    flag = true;
                 }
+            }
+            if(flag==false){
+                break;
             }
         }
         System.out.println(Arrays.toString(arr));
