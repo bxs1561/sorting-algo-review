@@ -27,9 +27,34 @@ public class BubbleSort {
 
     }
 
+    /*
+    * Insertion sort algorithm
+    * Best case Time Complexity: O(n*2)
+    * Worst case Time Complexity: : O(N)
+     */
+    public static void insertionSort(int[]arr){
+        //loop start from beginning of unsorted list
+        for(int i=1;i<arr.length;i++){
+            //take a variable from first unsorted sublist to compare with others
+            //value of this variable will increment as it goes through loop
+            int temp=arr[i];
+            int j =i-1;
+            while (j>=0&&arr[j]>temp){
+                //right value assign to left
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = temp;
+        }
+        System.out.println("Insertion sort sorted arrays: "+" "+ Arrays.toString(arr));
+
+    }
+
     public static void main(String[]args){
         int[] arr= new int[]{17,20,7,9,6,2,3,1,0,-1,-2};
         bubbleSort(arr);
+//        System.out.println("\n");
+        insertionSort(arr);
 
     }
 }
